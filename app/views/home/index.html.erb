@@ -1,0 +1,8 @@
+<% if user_signed_in? %>
+  <h1>Welcome <%= current_user.email %> to Sign I/O</h1>
+  <%= link_to t("new_community"), new_community_path %>
+  <%= link_to t('new_topic'), new_topic_path %>
+  <%= link_to t("sign_out"), destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to t("sign_in"), new_user_session_path %>
+<% end %>
